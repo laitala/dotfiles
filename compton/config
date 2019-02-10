@@ -13,7 +13,6 @@ refresh-rate = 0;
 dbe = false;
 sw-opti = false;
 unredir-if-possible = false;
-focus-exclude = [ ];
 detect-transient = true;
 detect-client-leader = true;
 invert-color-include = [ ];
@@ -67,4 +66,12 @@ blur-background-exclude = [
 opacity-rule = [
 	"99:window_type = 'desktop'",
 	"99:window_type = 'fullscreen'"
+];
+
+focus-exclude = [
+	"class_g = 'Firefox'"
+];
+
+opacity-exclude = [
+	"class_g = 'Firefox'"
 ];
