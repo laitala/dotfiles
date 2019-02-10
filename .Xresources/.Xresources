@@ -1,0 +1,45 @@
+!Clipboard
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.perl-ext-common: default,clipboard,matcher
+
+!URL
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!Font
+URxvt.font: xft:monospace:size=24:style=Regular:antialias=true
+URxvt.boldFont: xft:monospace:size=24:style=Bold:antialias=true
+URxvt.letterSpace: -0.5
+
+!Internal border
+URxvt*internalBorder: 24
+
+!Some other shit
+URxvt.scrollBar: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URcvt.scrollTtyKeypress: true
+
+
+!Colors
+URxvt.background: rgba:1234/1234/1234/a000
+URxvt.foreground: white
+URxvt.depth: 32
+
+URxvt.color0: #282a2e
+URxvt.color1: #a54242
+URxvt.color2: #8c9440
+URxvt.color3: #de935f
+URxvt.color4: #5f819d
+URxvt.color5: #85678f
+URxvt.color6: #5e8d87
+URxvt.color7: #707880
+URxvt.color8: #373b41
+URxvt.color9: #cc6666
+URxvt.color10: #b5bd68
+Urxvt.color11: #f0c674
+URxvt.color12: #81a2be
+URxvt.color13: #b294bb
+URxvt.color14: #8abeb7
+URxvt.color15: #c5c8c6
