@@ -57,10 +57,11 @@ blur-background-fixed = true;
 
 # blur-kern = "7x7box";
 blur-method = "kawase";
-blur-strength = 12;
+blur-strength = 20;
 blur-background-exclude = [
 	"window_type = 'desktop'",
-	"window_type = 'fullscreen'"
+	"window_type = 'fullscreen'",
+	"class_g = 'Polybar'"
 ];
 
 opacity-rule = [
