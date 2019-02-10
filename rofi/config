@@ -1,0 +1,8 @@
+rofi.font: Fira Sans Mono 24
+rofi.width: 1920
+rofi.padding: 20
+rofi.line-margin: 20
+rofi.lines: 20
+rofi.bw: 4
+rofi.hide-scrollbar: true
+rofi.separator-style: none
