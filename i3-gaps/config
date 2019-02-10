@@ -1,7 +1,7 @@
 # Execute programs at start
-exec_always --no-startup-id /home/leevi/.config/polybar/launch.sh
-exec_always feh --bg-fill /home/leevi/.wallpapers/2.jpg
-exec_always compton --config /home/leevi/.config/compton/config
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always feh --bg-fill ~/.wallpapers/2.jpg
+exec_always compton --config ~/.config/compton/config
 
 # Use windows key as mod
 set $mod Mod4
