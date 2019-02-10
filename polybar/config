@@ -1,0 +1,204 @@
+[colors]
+background = #00000000
+background-alt = #40000000
+foreground = #dfdfdf
+foreground-alt = #35000000
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/disp1]
+monitor = DisplayPort-0
+override-redirect = false
+
+line-color = #b8dbf2
+line-size = 4
+
+width = 100%
+height = 54
+offset-x = 0
+offset-y = 0
+
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; separator = 
+spacing = 0
+
+border-size = 8
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+#font-0 = pango:DejaVu Sans Mono:pixelsize=11;2
+font-0 = pango:Fira Sans Mono:pixelsize=20;2
+font-1 = MaterialDesignIcons:size=24;2
+font-2 = MaterialDesignIcons:size=28;3
+
+modules-left = i3 spotify
+modules-center = date
+modules-right = alsa memory cpu wlan
+
+tray-position = right
+tray-padding = 2
+tray-transparent = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/disp2]
+monitor = DVI-D-0
+override-redirect = false
+
+line-color = #b8dbf2
+line-size = 2
+
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; separator = 
+spacing = 0
+
+border-size = 8
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+#font-0 = pango:DejaVu Sans Mono:pixelsize=11;2
+font-0 = pango:Fira Sans Mono:pixelsize=11;2
+font-1 = MaterialDesignIcons:size=11;2
+font-2 = MaterialDesignIcons:size=12;3
+
+modules-left = i3 spotify
+modules-center = date
+modules-right = alsa memory cpu wlan
+
+tray-position = right
+tray-padding = 2
+tray-transparent = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/spotify]
+type=custom/script
+interval=5
+label-active-font = 2
+format-prefix = "  "
+format = <label>
+exec = python ~/.config/polybar/plugins/spotify.py -f '{artist}  ~  {song}'
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+;label-focused = 
+;label-focused-background = ${colors.background-alt}
+label-focused-background = #00000000
+label-focused-underline = #90b8dbf2
+label-focused-padding = 2
+
+label-unfocused = %index%
+;label-unfocused = 
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix =   
+format-prefix-foreground = ${colors.foreground}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+label = " %percentage_used%%"
+
+[module/wlan]
+type = internal/network
+interface = wlp5s0
+interval = 5
+
+format-connected = "<ramp-signal>  <label-connected>"
+label-connected = %essid%
+
+format-disconnected = 
+
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %Y/%m/%d
+
+time = %H:%M
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+
+label =  %date%     %time%
+
+[module/alsa]
+type = internal/alsa
+
+label-active-font = 1
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+format-muted-foreground = ${colors.foreground}
+label-muted =  
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[settings]
+screenchange-reload = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
