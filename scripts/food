@@ -1,0 +1,3 @@
+w3m www.jarvenpaanlukio.fi > /home/leevi/Scripts/foodsource
+tput setaf 14; sed -n '/MAANANTAI/,/M: maidoton/p' /home/leevi/Scripts/foodsource
+rm /home/leevi/Scripts/foodsource
