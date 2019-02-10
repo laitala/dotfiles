@@ -7,95 +7,107 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+[bar/laptop]
+monitor = eDP1
+monitor-fallback = HDMI1
+monitor-strict = false
+override-redirect = false
+line-color = #b8dbf2
+line-size = 2
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+; separator = 
+spacing = 0
+border-size = 8
+border-color = ${colors.background}
+padding-left = 0
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 2
+#font-0 = pango:DejaVu Sans Mono:pixelsize=11;2
+font-0 = pango:Fira Sans Mono:pixelsize=11;2
+font-1 = MaterialDesignIcons:size=12;2
+font-2 = MaterialDesignIcons:size=14;3
+modules-left = i3 spotify
+modules-center = date
+modules-right = xbacklight alsa memory cpu wlan battery
+tray-position = right
+tray-padding = 2
+tray-transparent = true
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 [bar/disp1]
 monitor = DisplayPort-0
 override-redirect = false
-
 line-color = #b8dbf2
 line-size = 4
-
 width = 100%
 height = 54
 offset-x = 0
 offset-y = 0
-
 radius = 0
 fixed-center = true
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 ; separator = 
 spacing = 0
-
 border-size = 8
 border-color = ${colors.background}
-
 padding-left = 0
 padding-right = 2
-
 module-margin-left = 2
 module-margin-right = 2
-
 #font-0 = pango:DejaVu Sans Mono:pixelsize=11;2
 font-0 = pango:Fira Sans Mono:pixelsize=20;2
 font-1 = MaterialDesignIcons:size=24;2
 font-2 = MaterialDesignIcons:size=28;3
-
 modules-left = i3 spotify
 modules-center = date
 modules-right = alsa memory cpu wlan
-
 tray-position = right
 tray-padding = 2
 tray-transparent = true
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/disp2]
 monitor = DVI-D-0
 override-redirect = false
-
 line-color = #b8dbf2
 line-size = 2
-
 width = 100%
 height = 24
 offset-x = 0
 offset-y = 0
-
 radius = 0
 fixed-center = true
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 ; separator = 
 spacing = 0
-
 border-size = 8
 border-color = ${colors.background}
-
 padding-left = 0
 padding-right = 2
-
 module-margin-left = 2
 module-margin-right = 2
-
 #font-0 = pango:DejaVu Sans Mono:pixelsize=11;2
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
 font-1 = MaterialDesignIcons:size=11;2
 font-2 = MaterialDesignIcons:size=12;3
-
 modules-left = i3 spotify
 modules-center = date
 modules-right = alsa memory cpu wlan
-
 tray-position = right
 tray-padding = 2
 tray-transparent = true
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -113,29 +125,34 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 pin-workspaces = true
-
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
-
 label-focused = %index%
 ;label-focused = 
 ;label-focused-background = ${colors.background-alt}
 label-focused-background = #00000000
 label-focused-underline = #90b8dbf2
 label-focused-padding = 2
-
 label-unfocused = %index%
 ;label-unfocused = 
 label-unfocused-padding = 2
-
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
-
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label> 
+label =  %percentage%%
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -155,12 +172,9 @@ label = " %percentage_used%%"
 type = internal/network
 interface = wlp5s0
 interval = 5
-
 format-connected = "<ramp-signal>  <label-connected>"
 label-connected = %essid%
-
 format-disconnected = 
-
 ramp-signal-0 =  
 ramp-signal-1 =  
 ramp-signal-2 =  
@@ -170,31 +184,55 @@ ramp-signal-4 = 
 [module/date]
 type = internal/date
 interval = 5
-
 date = %Y/%m/%d
-
 time = %H:%M
-
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-
 label =  %date%     %time%
 
 [module/alsa]
 type = internal/alsa
-
 label-active-font = 1
-
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
-
 format-muted-foreground = ${colors.foreground}
 label-muted =  
-
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+poll-interval = 10
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-framerate = 500
 
 [settings]
 screenchange-reload = false
