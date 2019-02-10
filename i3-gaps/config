@@ -1,4 +1,5 @@
 # Execute programs at start
+exec ~/Scripts/configure_monitors.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always feh --bg-fill ~/.wallpapers/2.jpg
 exec_always compton --config ~/.config/compton/config
