@@ -21,25 +21,33 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URcvt.scrollTtyKeypress: true
 
-
 !Colors
 URxvt.background: rgba:1234/1234/1234/a000
-URxvt.foreground: white
+URxvt.foreground: #ffffff
+URxvt.cursorColor: #ffffff
 URxvt.depth: 32
 
-URxvt.color0: #282a2e
-URxvt.color1: #a54242
-URxvt.color2: #8c9440
-URxvt.color3: #de935f
-URxvt.color4: #5f819d
-URxvt.color5: #85678f
-URxvt.color6: #5e8d87
-URxvt.color7: #707880
-URxvt.color8: #373b41
-URxvt.color9: #cc6666
-URxvt.color10: #b5bd68
-Urxvt.color11: #f0c674
-URxvt.color12: #81a2be
-URxvt.color13: #b294bb
-URxvt.color14: #8abeb7
-URxvt.color15: #c5c8c6
+!Black
+URxvt.color0: #151515
+URxvt.color8: #505050
+!Red
+URxvt.color1: #ac4142
+URxvt.color9: #ac6667
+!Green
+URxvt.color2: #89a840
+URxvt.color10: #91a863
+!Yellow
+URxvt.color3: #f5b85d
+Urxvt.color11: #f5cd90
+!Blue
+URxvt.color4: #4597b5
+URxvt.color12: #6a9fb5
+!Magenta
+URxvt.color5: #ab5298
+URxvt.color13: #aa759f
+!Cyan
+URxvt.color6: #45b5a0
+URxvt.color14: #75b5aa
+!White
+URxvt.color7: #b9b9b9
+URxvt.color15: #f5f5f5
