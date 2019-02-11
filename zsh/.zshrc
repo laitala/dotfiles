@@ -16,7 +16,7 @@ cat ~/.oh-my-zsh/ban | lolcat
 # Aliases
 alias ls="ls -l --color=auto"
 alias lsa="ls -al --color=auto"
-alias rm="rm -i"
+alias rm="rm -Iv"
 
 alias l="tput setaf 14; cat ~/Documents/School/00/Lukujärjestys/Lukujärjestys"
 alias food="~/Scripts/food"
