@@ -10,6 +10,8 @@ URxvt.matcher.button: 1
 !Font
 URxvt.font: xft:monospace:size=24:style=Regular:antialias=true
 URxvt.boldFont: xft:monospace:size=24:style=Bold:antialias=true
+!URxvt.font: xft:RobotoMono-Regular:size=11:style=Regular:antialias=true
+!URxvt.boldFont: xft:RobotoMono-Bold:size=11:style=Bold:antialias=true
 URxvt.letterSpace: -0.5
 
 !Internal border
