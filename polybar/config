@@ -2,7 +2,7 @@
 clear = #00000000
 white = #ffffffff
 gray = #ffafafaf
-alert = #bd2c40
+alert = #ccbd2c40
 
 [bar/laptop]
 monitor = eDP1
