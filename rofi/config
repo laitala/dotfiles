@@ -1,8 +1,14 @@
 rofi.font: Fira Sans Mono 24
-rofi.width: 1920
-rofi.padding: 20
-rofi.line-margin: 20
-rofi.lines: 20
-rofi.bw: 4
+!rofi.width: 512
+!rofi.padding: 10
+!rofi.line-margin: 10
+!rofi.lines: 5
+!rofi.yoffset: 256
+!rofi.xoffset: -410
+!rofi.bw: 4
 rofi.hide-scrollbar: true
 rofi.separator-style: none
+rofi.terminal: urxvt
+rofi.threads: 4
+
+rofi.theme: /usr/share/rofi/themes/sidebar.rasi
