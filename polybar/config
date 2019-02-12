@@ -1,7 +1,7 @@
 [colors]
 clear = #00000000
 white = #ffffffff
-gray = #ffafafaf
+gray = #ff9f9f9f
 alert = #ccbd2c40
 
 [bar/laptop]
