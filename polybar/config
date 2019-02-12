@@ -2,7 +2,6 @@
 clear = #00000000
 white = #ffffffff
 gray = #ffafafaf
-secondary = #e60053
 alert = #bd2c40
 
 [bar/laptop]
