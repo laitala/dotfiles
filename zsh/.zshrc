@@ -1,14 +1,7 @@
-powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
-  export ZSH="$HOME/.oh-my-zsh"
-
+#powerline-daemon -q
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=minimal_improve
-
-plugins=(
-  git
-)
-
 source $ZSH/oh-my-zsh.sh
 
 cat ~/.oh-my-zsh/ban | lolcat
@@ -17,6 +10,7 @@ cat ~/.oh-my-zsh/ban | lolcat
 alias ls="ls -l --color=auto"
 alias lsa="ls -al --color=auto"
 alias rm="rm -Iv"
+alias grep="grep --color=auto"
 
 alias l="tput setaf 14; cat ~/Documents/School/00/Lukujärjestys/Lukujärjestys"
 alias food="~/Scripts/food"
