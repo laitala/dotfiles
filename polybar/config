@@ -20,7 +20,6 @@ modules-center = date
 modules-right = xbacklight alsa memory cpu wlan battery
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
 font-1 = MaterialDesignIcons:size=12;2
-font-2 = MaterialDesignIcons:size=14;3
 
 [bar/disp1]
 monitor = DisplayPort-0
@@ -38,7 +37,6 @@ modules-center = date
 modules-right = alsa memory cpu wlan
 font-0 = pango:Fira Sans Mono:pixelsize=20;2
 font-1 = MaterialDesignIcons:size=24;2
-font-2 = MaterialDesignIcons:size=28;3
 
 [bar/disp2]
 monitor = DVI-D-0
@@ -56,12 +54,10 @@ modules-center = date
 modules-right = xbacklight alsa memory cpu wlan battery
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
 font-1 = MaterialDesignIcons:size=12;2
-font-2 = MaterialDesignIcons:size=14;3
 
 [module/spotify]
 type = custom/script
 interval = 5
-label-active-font = 2
 format-prefix = "  "
 format = <label>
 exec = python ~/.config/polybar/plugins/spotify.py -f '{artist}  ~  {song}'
@@ -123,7 +119,6 @@ label = " %date%     %time%"
 
 [module/alsa]
 type = internal/alsa
-label-active-font = 1
 format-volume = <ramp-volume> <label-volume>
 label-volume = "%percentage%%"
 label-muted =  
@@ -135,7 +130,7 @@ ramp-volume-2 = 
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 99
 poll-interval = 10
 format-charging = <animation-charging> <label-charging>
 label-charging = "%percentage%%"
