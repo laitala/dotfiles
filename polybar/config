@@ -1,22 +1,16 @@
 [colors]
-background = #00000000
-background-alt = #40000000
-foreground = #dfdfdf
-foreground-alt = #35000000
-primary = #ffb52a
+clear = #00000000
+white = #ffffffff
+gray = #ffafafaf
 secondary = #e60053
 alert = #bd2c40
-underline = #b8dbf2
 
 [bar/laptop]
 monitor = eDP1
 height = 24
 fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-color = ${colors.underline}
-line-size = 2
-border-color = ${colors.background}
+background = ${colors.clear}
+foreground = ${colors.white}
 border-size = 8
 padding-left = 1
 padding-right = 3
@@ -25,9 +19,6 @@ module-margin-right = 2
 modules-left = i3 spotify
 modules-center = date
 modules-right = xbacklight alsa memory cpu wlan battery
-tray-position = right
-tray-padding = 2
-tray-transparent = true
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
 font-1 = MaterialDesignIcons:size=12;2
 font-2 = MaterialDesignIcons:size=14;3
@@ -36,11 +27,8 @@ font-2 = MaterialDesignIcons:size=14;3
 monitor = DisplayPort-0
 height = 54
 fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-color = ${colors.underline}
-line-size = 4
-border-color = ${colors.background}
+background = ${colors.clear}
+foreground = ${colors.white}
 border-size = 8
 padding-left = 1
 padding-right = 3
@@ -49,9 +37,6 @@ module-margin-right = 2
 modules-left = i3 spotify
 modules-center = date
 modules-right = alsa memory cpu wlan
-tray-position = right
-tray-padding = 2
-tray-transparent = true
 font-0 = pango:Fira Sans Mono:pixelsize=20;2
 font-1 = MaterialDesignIcons:size=24;2
 font-2 = MaterialDesignIcons:size=28;3
@@ -60,11 +45,8 @@ font-2 = MaterialDesignIcons:size=28;3
 monitor = DVI-D-0
 height = 24
 fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-color = ${colors.underline}
-line-size = 2
-border-color = ${colors.background}
+background = ${colors.clear}
+foreground = ${colors.white}
 border-size = 8
 padding-left = 1
 padding-right = 3
@@ -72,17 +54,14 @@ module-margin-left = 2
 module-margin-right = 2
 modules-left = i3 spotify
 modules-center = date
-modules-right = alsa memory cpu wlan
-tray-position = right
-tray-padding = 2
-tray-transparent = true
+modules-right = xbacklight alsa memory cpu wlan battery
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
-font-1 = MaterialDesignIcons:size=11;2
-font-2 = MaterialDesignIcons:size=12;3
+font-1 = MaterialDesignIcons:size=12;2
+font-2 = MaterialDesignIcons:size=14;3
 
 [module/spotify]
-type=custom/script
-interval=5
+type = custom/script
+interval = 5
 label-active-font = 2
 format-prefix = "  "
 format = <label>
@@ -94,52 +73,41 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 pin-workspaces = true
+label-mode-foreground = ${colors.white}
+label-mode-background = ${colors.clear}
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-label-focused = %index%
-label-focused-background = #00000000
-label-focused-underline = ${colors.underline}
-label-focused-padding = 2
-label-unfocused = %index%
-label-unfocused-padding = 2
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-padding = ${self.label-focused-padding}
-label-urgent = %index%
+label-focused = "%index%"
+label-focused-padding = ${self.label-mode-padding}
+label-unfocused = "%index%"
+label-unfocused-foreground = ${colors.gray}
+label-unfocused-padding = ${self.label-mode-padding}
+label-visible = "%index%"
+label-visible-padding = ${self.label-mode-padding}
+label-urgent = "%index%"
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = ${self.label-mode-padding}
 
 [module/xbacklight]
 type = internal/xbacklight
 format = <label> 
-label =  %percentage%%
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
+label = " %percentage%%"
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix =   
-format-prefix-foreground = ${colors.foreground}
-label = %percentage%%
+label = "  %percentage%%"
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
-label = " %percentage_used%%"
+label = " %percentage_used%%"
 
 [module/wlan]
 type = internal/network
-interface = wlp5s0
+interface = wlp3s0
 interval = 5
 format-connected = "<ramp-signal>  <label-connected>"
-label-connected = %local_ip%
+label-connected = "%local_ip%"
 format-disconnected = 
 ramp-signal-0 =  
 ramp-signal-1 =  
@@ -152,17 +120,13 @@ type = internal/date
 interval = 5
 date = %Y/%m/%d
 time = %H:%M
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-label =  %date%     %time%
+label = " %date%     %time%"
 
 [module/alsa]
 type = internal/alsa
 label-active-font = 1
 format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
-format-muted-foreground = ${colors.foreground}
+label-volume = "%percentage%%"
 label-muted =  
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -175,11 +139,9 @@ adapter = AC
 full-at = 98
 poll-interval = 10
 format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%%
+label-charging = "%percentage%%"
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%%
-format-full-prefix = 
-format-full-prefix-foreground = ${colors.foreground-alt}
+label-discharging = "%percentage%%"
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
