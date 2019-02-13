@@ -1,12 +1,3 @@
-!Clipboard
-URxvt.keysym.Control-Shift-V: perl:clipboard:paste
-URxvt.keysym.Control-Shift-C: perl:clipboard:copy
-URxvt.perl-ext-common: default,clipboard,matcher
-
-!URL
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-
 !Font
 URxvt.font: xft:monospace:size=24:style=Regular:antialias=true
 URxvt.boldFont: xft:monospace:size=24:style=Bold:antialias=true
