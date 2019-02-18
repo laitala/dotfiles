@@ -21,6 +21,23 @@ modules-right = xbacklight alsa memory cpu wlan battery
 font-0 = pango:Fira Sans Mono:pixelsize=11;2
 font-1 = MaterialDesignIcons:size=12;2
 
+[bar/tv]
+monitor = HDMI1
+height = 24
+fixed-center = true
+background = ${colors.clear}
+foreground = ${colors.white}
+border-size = 8
+padding-left = 1
+padding-right = 3
+module-margin-left = 2
+module-margin-right = 2
+modules-left = i3 spotify
+modules-center = date
+modules-right = xbacklight alsa memory cpu wlan battery
+font-0 = pango:Fira Sans Mono:pixelsize=11;2
+font-1 = MaterialDesignIcons:size=12;2
+
 [bar/disp1]
 monitor = DisplayPort-0
 height = 54
