@@ -1,5 +1,5 @@
 # Execute programs at start
-exec ~/Scripts/configure_monitors.sh
+exec ~/scripts/configure_monitors.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec compton --config ~/.config/compton/config
 exec conky
