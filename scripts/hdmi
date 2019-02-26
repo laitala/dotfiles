@@ -1,3 +1,6 @@
-xrandr --output HDMI1 --mode 1920x1080 --rate 50.00 --left-of eDP1
-sleep 1
-./.fehbg
+pkill compton
+pkill polybar
+xrandr --output HDMI1 --mode 1920x1080 --rate 50.00 --output eDP1 --off
+feh --bg-fill ~/.wallpapers/2.jpg
+nohup compton --config ~/.config/compton/config
+nohup ./.config/polybar/launch.sh
