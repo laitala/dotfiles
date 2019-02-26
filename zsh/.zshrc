@@ -13,11 +13,11 @@ alias rm="rm -Iv"
 alias grep="grep --color=auto"
 
 alias l="tput setaf 14; cat ~/Documents/School/00/Lukujärjestys/Lukujärjestys"
-alias food="~/Scripts/food"
-alias t="~/Scripts/translator"
+alias food="~/scripts/food"
+alias t="~/scripts/translator"
 
 alias neofetch="echo '' && neofetch"
-alias n="echo '' && neofetch --config ~/.config/neofetch/mini.conf"
+alias n="neofetch --config ~/.config/neofetch/mini.conf"
 alias nshow="clear && n"
 alias sl="sl | lolcat"
 
