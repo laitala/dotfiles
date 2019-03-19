@@ -5,17 +5,20 @@ URxvt.boldFont: xft:monospace:size=24:style=Bold:antialias=true
 !URxvt.boldFont: xft:RobotoMono-Bold:size=11:style=Bold:antialias=true
 URxvt.letterSpace: -0.5
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 !Internal border
 URxvt*internalBorder: 24
 
-!Some other shit
+!Some other stuff
 URxvt.scrollBar: false
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URcvt.scrollTtyKeypress: true
 
 !Colors
-URxvt.background: rgba:1234/1234/1234/a000
+URxvt.background: rgba:1234/1234/1234/3500
 URxvt.foreground: #ffffff
 URxvt.cursorColor: #ffffff
 URxvt.depth: 32
