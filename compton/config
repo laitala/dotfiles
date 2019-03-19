@@ -13,8 +13,9 @@ refresh-rate = 0;
 dbe = false;
 sw-opti = false;
 unredir-if-possible = false;
-detect-transient = true;
-detect-client-leader = true;
+#focus-exclude = [ ];
+detect-transient = false;
+detect-client-leader = false;
 invert-color-include = [ ];
 glx-no-stencil = true;
 glx-copy-from-front = false;
@@ -24,8 +25,7 @@ glx-swap-method = "undefined";
 vsync = "opengl-swc"
 
 # Shadow
-
-shadow = false;
+shadow = true;
 no-dnd-shadow = true;
 no-dock-shadow = true;
 shadow-radius = 8;
@@ -35,44 +35,40 @@ shadow-opacity = 0.5;
 shadow-red = 0.0;
 shadow-green = 0.0;
 shadow-blue = 0.0;
-shadow-exclude = [
-	"name = 'Notification'"
+shadow-exclude = [ 
+	"class_g='Polybar'", 
+	"override_redirect = 1 && !WM_CLASS@:s" 
 ];
 
 # Opacity
+#mark-overdir-focused = false;
 
-menu-opacity = 0.8;
-inactive-opacity = 0.85;
-active-opacity = 0.85;
-frame-opacity = 0.9;
-inactive-opacity-override = false;
-alpha-step = 0.03;
+menu-opacity = 0.75;
+#inactive-opacity = 0.8;
+active-opacity = 1.0;
+#frame-opacity = 0.9;
+#inactive-opacity-override = true;
+#alpha-step = 0.05;
+#inactive-dim = 0.1;
+#inactive-dim-fixed = true;
+opacity-rule = [ 
+	"75:name='Spotify'",
+	"80:name*='Audacious'",
+	"80:name='Spectrum Analyzer'",
+	"80:name*='LibreOffice'",
+	"80:name*='GeoGebra'",
+	"80:class_g='Leafpad'"
+];
 
-inactive-dim = 0.1;
-inactive-dim-fixed = true;
-
+# Blur
 blur-background = true;
 blur-background-frame = true;
 blur-background-fixed = true;
 
-# blur-kern = "7x7box";
 blur-method = "kawase";
-blur-strength = 20;
+blur-strength = 12;
 blur-background-exclude = [
 	"window_type = 'desktop'",
 	"window_type = 'fullscreen'",
 	"class_g = 'Polybar'"
-];
-
-opacity-rule = [
-	"99:window_type = 'desktop'",
-	"99:window_type = 'fullscreen'"
-];
-
-focus-exclude = [
-	"class_g = 'Firefox'"
-];
-
-opacity-exclude = [
-	"class_g = 'Firefox'"
 ];
