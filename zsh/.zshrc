@@ -5,7 +5,7 @@ ZSH_THEME=minimal_improve
 source $ZSH/oh-my-zsh.sh
 
 #cat ~/.oh-my-zsh/ban | lolcat
-uname -srmo | lolcat
+echo "   ~ Arch $(uname -sro) ~" | lolcat
 
 # Aliases
 alias ls="ls -l --color=auto"
@@ -24,4 +24,4 @@ alias nshow="clear && n"
 alias sl="sl | lolcat"
 
 alias p="ping archlinux.org -c 3"
-alias c="clear && uname -srmo | lolcat"
+alias c="clear && echo '   ~ Arch $(uname -sro) ~' | lolcat"
