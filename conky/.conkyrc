@@ -16,25 +16,25 @@ own_window_argb_value 0
 double_buffer yes
 #minimum_size 250 5
 #maximum_width 500
-draw_shades yes
+draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
-default_color white
-default_shade_color 001928
-default_outline_color green
+default_color ffffff
+default_shade_color 000000
+default_outline_color 000000
 alignment bottom_left
 gap_x 60
 gap_y 250
 no_buffers yes
 uppercase no
-cpu_avg_samples 1
-net_avg_samples 1
+cpu_avg_samples 0
+net_avg_samples 0
 override_utf8_locale yes
 #use_spacer yes
 
 
 minimum_size 2048 1024
 TEXT
-${voffset 256}${offset 128}${color EAEAEA}${font Roboto:style=Thin:pixelsize=384}${time %H:%M }${font Roboto:style=Thin:pixelsize=256}${time :%S}
-${voffset -160}${offset 152}${color EAEAEA}${font Roboto:style=Thin:pixelsize=128}${time %d %B %Y}${font}
+${voffset 356}${offset 2128}${color EAEAEA}${font Roboto:style=Thin:pixelsize=384}${time %H:%M }${font Roboto:style=Thin:pixelsize=256}${time :%S}
+${voffset -160}${offset 2152}${color EAEAEA}${font Roboto:style=Thin:pixelsize=128}${time %d %B %Y}${font}
